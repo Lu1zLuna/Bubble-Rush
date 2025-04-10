@@ -14,6 +14,17 @@ config/name="Rush Hour"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
 [dotnet]
 
 project/assembly_name="Rush Hour"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.513726, 0.831373, 0.929412, 1)

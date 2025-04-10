@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhqx122re2llk"]
+
+[ext_resource type="PackedScene" uid="uid://03le00kik7c6" path="res://Scenes/Wheel.tscn" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://57ut6aymsx3l" path="res://Images/Car/RedCar.png" id="2_gntrk"]
+
+[node name="Player" type="RigidBody2D" groups=["player"]]
+position = Vector2(-136, 32)
+gravity_scale = 2.0
+
+[node name="WheelHolder" type="PinJoint2D" parent="."]
+position = Vector2(-149, 93)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.5
+
+[node name="Wheel" parent="WheelHolder" instance=ExtResource("1_kyqiw")]
+
+[node name="WheelHolder2" type="PinJoint2D" parent="."]
+position = Vector2(111, 93)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.5
+
+[node name="Wheel" parent="WheelHolder2" instance=ExtResource("1_kyqiw")]
+
+[node name="Car" type="Sprite2D" parent="."]
+texture = ExtResource("2_gntrk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["player"]]
+polygon = PackedVector2Array(-131, -64, -201, -60, -222, -43, -222, 77, -208, 100, 201, 99, 218, 83, 216, -8, 102, -43, 10, -58)

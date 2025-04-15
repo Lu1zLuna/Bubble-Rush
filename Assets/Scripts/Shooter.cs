@@ -38,8 +38,8 @@ public class Shooter : MonoBehaviour
         // Debug.Log("bottomShootPoint: " + bottomShootPoint);
         // Debug.Log("limit: " + limit);
 
-        // if (GameManager.instance.gameState == "play")
-        // {
+        if (GameManager.instance.gameState == "play")
+        {
             // Pega a posição do mouse na tela
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             lookDirection = mousePosition - transform.position;
@@ -51,16 +51,16 @@ public class Shooter : MonoBehaviour
             {
                 line.transform.position = transform.position;
                 line.transform.rotation = Quaternion.Euler(0f, 0f, lookAngle - 90);
-                
-                // if (LevelManager.instance != null
-                    // && LevelManager.instance.GetBubbleAreaChildCount() > 0) // implementar
-                // {
-                   line.SetActive(true);
-                // }
-                // else
-                // {
-                    // line.SetActive(false);
-                // }
+
+                if (LevelManager.instance != null
+                    && LevelManager.instance.GetBubbleAreaChildCount() > 0) // implementar
+                {
+                    line.SetActive(true);
+                }
+                else
+                {
+                    line.SetActive(false);
+                }
 
                 if (canShoot
                     && Input.GetMouseButtonUp(0)
@@ -70,12 +70,12 @@ public class Shooter : MonoBehaviour
                     canShoot = false;
                     Shoot();
                 }
-                
+
             }
-            
-            
-        //}
+
+        }
     }
+    
 
     public void Shoot()
     {
@@ -84,8 +84,8 @@ public class Shooter : MonoBehaviour
             CreateNextBubble();
         }
 
-        // ScoreManager.GetInstance().AddThrows();
-        // AudioManager.instance.PlaySound("shoot");
+        ScoreManager.GetInstance().AddThrows();
+        AudioManager.instance.PlaySound("shoot");
         
         // Aplica a rotação calculada para a bolha atual
         transform.rotation = Quaternion.Euler(0f, 0f, lookAngle + 90);

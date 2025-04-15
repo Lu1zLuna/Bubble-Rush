@@ -1,16 +1,52 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private int score = 0;
+    private int throws = 0;
+    public static ScoreManager instance;
+
+    public static ScoreManager GetInstance()
     {
+        if (instance == null)
+        {
+            instance = new ScoreManager();
+        }
         
+        return instance;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateScoreUI()
     {
-        
+        Text _score =GameObject.Find("Score").GetComponent<Text>();
+    }
+    
+    public void AddScore(int score)
+    {
+        this.score += score;
+        UpdateScoreUI();
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public void AddThrows()
+    {
+        throws++;
+    }
+
+    public int GetThrows()
+    {
+        return throws;
+    }
+
+    public void Reset()
+    {
+        score = 0;
+        throws = 0;
+        UpdateScoreUI();
     }
 }

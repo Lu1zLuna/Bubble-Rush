@@ -135,21 +135,21 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // public void ToggleMute()
-    // {
-    //     AudioManager.Instance.ToggleMute();
-    //
-    //     if (AudioManager.Instance.mute)
-    //     {
-    //         volBtn.GetComponent<Image>().color = Color.gray;
-    //         homeVolBtn.GetComponent<Image>().color = Color.gray;
-    //     }
-    //     else
-    //     {
-    //         volBtn.GetComponent<Image>().color = Color.white;
-    //         homeVolBtn.GetComponent<Image>().color = Color.white;
-    //     }
-    // }
+    public void ToggleMute()
+    {
+        AudioManager.instance.ToggleMute();
+    
+        if (AudioManager.instance.mute)
+        {
+            volBtn.GetComponent<Image>().color = Color.gray;
+            homeVolBtn.GetComponent<Image>().color = Color.gray;
+        }
+        else
+        {
+            volBtn.GetComponent<Image>().color = Color.white;
+            homeVolBtn.GetComponent<Image>().color = Color.white;
+        }
+    }
 
     IEnumerator CheckSequence(Transform currentBubble)
     {

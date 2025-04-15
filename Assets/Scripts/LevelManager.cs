@@ -49,14 +49,14 @@ public class LevelManager : MonoBehaviour
     // Mostrar menu de seleção de níveis
     public void StartNewGame()
     {
-        GameManager.instance.startUi.SetActive(false);
+        GameManager.instance.startUI.SetActive(false);
         GameManager.instance.levelsUI.SetActive(true);
     }
     
     // Iniciar um nível
     public void StartLevel(int level)
     {
-        GamerManager.instance.levelsUI.SetActive(false);
+        GameManager.instance.levelsUI.SetActive(false);
         if (level >= levels.Count) level = 0;
         
         currentLevel = level;

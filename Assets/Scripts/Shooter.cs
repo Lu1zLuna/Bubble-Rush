@@ -136,7 +136,7 @@ public class Shooter : MonoBehaviour
     }
 
 
-    private void CreateNextBubble()
+    public void CreateNextBubble()
     {
         List<GameObject> bubblesInScene = LevelManager.instance.bubblesInScene;
         List<string> colors = LevelManager.instance.colorsInScene;

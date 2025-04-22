@@ -62,6 +62,11 @@ public class LevelManager : MonoBehaviour
         currentLevel = level;
         levelText.GetComponent<UnityEngine.UI.Text>().text = "Level " + (level + 1);
         StartCoroutine(LoadLevel(level));
+        
+        if (level < 0 || level >= levels.Count)
+        {
+            Debug.LogError("Level inválido: " + level + ". Total de níveis: " + levels.Count);
+        }
     }
     
     // Carregamento de um nível selecionado
@@ -74,7 +79,7 @@ public class LevelManager : MonoBehaviour
         FillWithBubbles(levelToLoad, bubblesPrefabs);
 
         SnapChildrensToGrid(bubblesArea);
-        // InsertSpecialBubbles();
+        InsertSpecialBubbles();
         UpdateListOfBubblesInScene();
 
         GameManager.instance.shootScript.CreateNewBubbles();

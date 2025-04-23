@@ -20,6 +20,7 @@ public class ScoreManager
     public void UpdateScoreUI()
     {
         Text _score =GameObject.Find("Score").GetComponent<Text>();
+        _score.text = $"Score: {score}";
     }
     
     public void AddScore(int score)

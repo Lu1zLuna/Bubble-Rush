@@ -95,9 +95,9 @@ public class GameManager : MonoBehaviour
         foreach (Transform bubble in bubblesToDissolve)
         {
             if (bubble != null) Destroy(bubble.gameObject);
-            
-            bubblesToDissolve.Clear();
         }
+        
+        bubblesToDissolve.Clear();
     }
 
     public void ToggleGameState()
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
         foreach (Transform t in LevelManager.instance.bubblesArea)
         {
             if (t.GetComponent<Bubble>().isConnected
-                && t.position.y > bottomLimit.position.y)
+                && t.position.y < bottomLimit.position.y)
             {
                 LevelManager.instance.ClearLevel();
                 LoseMenu.SetActive(true);

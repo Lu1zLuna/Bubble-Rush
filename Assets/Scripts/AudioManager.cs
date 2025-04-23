@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.loop = sound.loop;
         }
         
-        PlaySound("Background");
+        PlaySound("background");
         DontDestroyOnLoad(gameObject);
     }
 

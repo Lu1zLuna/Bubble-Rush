@@ -22,7 +22,6 @@ public class Shooter : MonoBehaviour
 	{
 		line = GameObject.FindGameObjectWithTag("Line");
 		limit = GameObject.FindGameObjectWithTag("Limit");
-		//lineRenderer = line.GetComponent<LineRenderer>();
 	}
 
 	public void Update()
@@ -44,9 +43,6 @@ public class Shooter : MonoBehaviour
 				&& LevelManager.instance.GetBubbleAreaChildCount() > 0)
 				{
 					line.SetActive(true);
-
-					//cast a ray between transform position and mouse position
-					//CastRay(transform.position, gizmosPoint);
 				}
 			}
 			else
@@ -64,37 +60,6 @@ public class Shooter : MonoBehaviour
 			}
 		}
 	}
-
-	// private void CastRay(Vector2 pos, Vector2 dir)
-	// {
-	// 	int RayCount = 2;
-	// 	lineRenderer.positionCount = RayCount;
-
-	// 	lineRenderer.SetPosition(0, pos);
-
-	// 	for (int i = 1; i < RayCount; i++)
-	// 	{
-	// 		RaycastHit2D hit = Physics2D.Raycast(pos, dir - (Vector2)transform.position, 300);
-
-	// 		if (hit.collider != null && hit.transform.tag.Equals("Wall"))
-	// 		{
-	// 			lineRenderer.SetPosition(i, hit.point);
-
-	// 			pos = hit.point - dir * 0.01f;
-	// 			dir = Vector3.Reflect(dir, hit.normal);
-
-	// 			if (RayCount < 5)
-	// 			{
-	// 				RayCount += 1;
-	// 				lineRenderer.positionCount = RayCount;}
-	// 		}
-	// 		else if (hit.collider != null && hit.transform.tag.Equals("Bubble"))
-	// 		{
-	// 			lineRenderer.SetPosition(i, hit.point);
-	// 			break;
-	// 		}
-	// 	}
-	// }
 
 	public void Shoot()
 	{

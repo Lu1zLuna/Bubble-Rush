@@ -1167,6 +1167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500626411}
+  - component: {fileID: 500626413}
   - component: {fileID: 500626414}
   m_Layer: 6
   m_Name: Background
@@ -1194,6 +1195,14 @@ RectTransform:
   m_AnchoredPosition: {x: -0, y: -5.9711}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &500626413
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500626410}
+  m_CullTransparentMesh: 1
 --- !u!212 &500626414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1237,8 +1246,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
-  m_Sprite: {fileID: -6929809203332928039, guid: 537eebce8027ebf4b88783187be8aa79, type: 3}
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 2549280944978503740, guid: 637c2a15d1ee2ef47b5bcfb43208dd9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

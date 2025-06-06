@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject WinMenu;
     public GameObject LoseMenu;
-    public GameObject winScore;
-    public GameObject winThrows;
+    public Text winScore;
+    public Text winThrows;
     public GameObject volBtn;
     public GameObject playBtn;
     public GameObject homeVolBtn;

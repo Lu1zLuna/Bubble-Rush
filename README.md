@@ -1,4 +1,4 @@
-# Bubble Shooter: Melvo e a corrida contra o tempo
+# Bubble Rush: Melvo e a Corrida Contra o Tempo
 
 Integrantes:
 - Luiz Cláudio Luna Beirão
